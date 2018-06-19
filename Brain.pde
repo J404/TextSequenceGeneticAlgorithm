@@ -1,6 +1,6 @@
 public class Brain {
   String guessPhrase, targetPhrase;
-  String chars = "abcdefghijklmnopqrstuvwxyz 1234567890;,.'";
+  String chars = "abcdefghijklmnopqrstuvwxyz 1234567890;,.?!'"; //add characters if needed
   
   public Brain(String target) {
     targetPhrase = target;
