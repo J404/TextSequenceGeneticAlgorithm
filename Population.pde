@@ -11,6 +11,7 @@ public class Population {
     }
   }
   
+  // has the phrase been found by any of the population?
   public boolean hasFound() {
     selectBest();
     if (pop[bestSeqInd].brain.guessPhrase.equals(target)) {
@@ -51,6 +52,7 @@ public class Population {
     }
   }
   
+  //selects best parent for natural selection (better fitness = better chance)
   public Sequencer selectParent() {
     float running = 0.0;
     float rand = random(fitnessSum);
@@ -71,6 +73,7 @@ public class Population {
     }
   }
   
+  //selects the most accurate phrase
   public void selectBest() {
     float maxFit = 0.0;
     int maxI = 0;
@@ -80,6 +83,7 @@ public class Population {
         maxFit = pop[i].fitness;
         maxI = i;
       }
+      //don't take a step backward, so automatically mutate
       if (pop[i].fitness < minFit) {
         pop[i].brain.mutate();
       }
@@ -88,6 +92,7 @@ public class Population {
     minFit = pop[bestSeqInd].fitness;
   }
   
+  //only shows user the best one
   public void showBest() {
     pop[bestSeqInd].showGuess();
   }
