@@ -7,6 +7,7 @@ public class Brain {
     guessPhrase = "";
   }
   
+  //generates the guess phrase
   public void makeGuess() {
     for (int i = 0; i < targetPhrase.length(); i++) {
       int randomIn = (int)random(chars.length());
@@ -29,6 +30,7 @@ public class Brain {
     guessPhrase = g;
   }
   
+  //gets genes from two parents
   public Brain crossover(Sequencer parentB) {
     String guessB = parentB.brain.guessPhrase, guessA = guessPhrase;
     Brain newBrain = new Brain(target);
