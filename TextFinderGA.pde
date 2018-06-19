@@ -3,7 +3,7 @@ Population pop;
 
 void setup() {
   size(500, 500);
-  target = "tappas";
+  target = "hello world!"; //phrase to find
   pop = new Population(1000);
 }
 
